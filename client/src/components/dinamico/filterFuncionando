@@ -1,0 +1,39 @@
+import React, { useState } from 'react';
+import Cart from '../carrinho/Cart';
+import Navbar from '../elementos/navbar';
+import ProductsDi from './Products';
+import Footer from '../elementos/footer';
+
+function CatalogoDi() {
+  const [showDetailed, setShowDetailed] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState('all'); // Estado para controlar a categoria selecionada
+
+  const handleCategoryChange = (category) => {
+    console.log('Nova categoria selecionada:', category);
+    setShowDetailed(true); // Mostra os produtos detalhados
+    setSelectedCategory(category);
+  };
+  
+
+  return (
+    <>
+      <Navbar />
+
+      {/* Adiciona botões para escolher a categoria */}
+      <div style={{ textAlign: 'center', margin: '20px' }}>
+        <button onClick={() => handleCategoryChange('all')}>Todos</button>
+        <button onClick={() => handleCategoryChange('21')}>Nike</button>
+        <button onClick={() => handleCategoryChange('22')}>Adidas</button>
+        <button onClick={() => handleCategoryChange('101')}>Puma</button>
+      </div>
+
+      {/* Passa a categoria selecionada para o componente ProductsDi */}
+      <ProductsDi showDetailed={showDetailed} selectedCategory={selectedCategory} />
+
+      <Cart />
+      <Footer />
+    </>
+  );
+}
+
+export default CatalogoDi;

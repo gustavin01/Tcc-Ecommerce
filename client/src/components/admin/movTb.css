@@ -1,0 +1,40 @@
+/* Adicione estilos gerais à tabela */
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Estilo para cabeçalho da tabela */
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo para linhas alternadas (zebradas) */
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  

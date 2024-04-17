@@ -1,0 +1,59 @@
+/* Adicione estes estilos ao seu arquivo CSS ou componente de estilo */
+
+.product-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: grid;
+    grid-gap: 15px;
+  }
+  
+  form div {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  p {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #28a745; /* Verde para sucesso */
+  }
+  
+  .error-message {
+    color: #dc3545; /* Vermelho para erro */
+  }
+  

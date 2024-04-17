@@ -1,0 +1,68 @@
+/* ListPedidos.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  .green-button {
+    background-color: #156e18;
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    text-decoration: none;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  .pedido-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pedido-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .pedido-titulo {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .pedido-info p,
+  .pedido-outros p {
+    margin: 10px 0;
+  }
+  
+  .pedido-info p {
+    color: #28a745; /* Cor verde para informações de preço e quantidade */
+  }
+  
+  .pedido-outros p {
+    color: #333;
+  }
+  
+  @media (max-width: 600px) {
+    .pedido-item {
+      padding: 10px;
+    }
+  }
+  

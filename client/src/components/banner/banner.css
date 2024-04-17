@@ -1,0 +1,316 @@
+/*! lightslider - v1.1.3 - 2015-04-14
+* https://github.com/sachinchoolur/lightslider
+* Copyright (c) 2015 Sachin N; Licensed MIT */
+/** /!!! core css Should not edit !!!/**/ 
+
+.lSSlideOuter {
+    overflow: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+.lightSlider:before, .lightSlider:after {
+    content: " ";
+    display: table;
+}
+.lightSlider {
+    overflow: hidden;
+    margin: 0;
+}
+.lSSlideWrapper {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.lSSlideWrapper > .lightSlider:after {
+    clear: both;
+}
+.lSSlideWrapper .lSSlide {
+    -webkit-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    -webkit-transition-property: -webkit-transform,height;
+    -moz-transition-property: -moz-transform,height;
+    transition-property: transform,height;
+    -webkit-transition-duration: inherit !important;
+    transition-duration: inherit !important;
+    -webkit-transition-timing-function: inherit !important;
+    transition-timing-function: inherit !important;
+}
+.lSSlideWrapper .lSFade {
+    position: relative;
+}
+.lSSlideWrapper .lSFade > * {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    margin-right: 0;
+    width: 100%;
+}
+.lSSlideWrapper.usingCss .lSFade > * {
+    opacity: 0;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transition-duration: inherit !important;
+    transition-duration: inherit !important;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-timing-function: inherit !important;
+    transition-timing-function: inherit !important;
+}
+.lSSlideWrapper .lSFade > *.active {
+    z-index: 10;
+}
+.lSSlideWrapper.usingCss .lSFade > *.active {
+    opacity: 1;
+}
+/** /!!! End of core css Should not edit !!!/**/
+
+/* slider actions */
+.lSAction > a {
+    width: 32px;
+    display: block;
+    top: 50%;
+    height: 32px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    margin-top: -16px;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.35s linear 0s;
+    transition: opacity 0.35s linear 0s;
+}
+.lSAction > a:hover {
+    opacity: 1;
+}
+.lSAction > .lSPrev {
+    background-position: 0 0;
+    left: 10px;
+}
+.lSAction > .lSNext {
+    background-position: -32px 0;
+    right: 10px;
+}
+.lSAction > a.disabled {
+    pointer-events: none;
+}
+.cS-hidden {
+    height: 1px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    overflow: hidden;
+}
+
+/* Rtl */
+.lSSlideOuter.lSrtl {
+    direction: rtl;
+}
+.lSSlideOuter .lightSlider, .lSSlideOuter .lSPager {
+    padding-left: 0;
+    list-style: none outside none;
+}
+.lSSlideOuter.lSrtl .lightSlider, .lSSlideOuter.lSrtl .lSPager {
+    padding-right: 0;
+}
+.lSSlideOuter .lightSlider > *,  .lSSlideOuter .lSGallery li {
+    float: left;
+}
+.lSSlideOuter.lSrtl .lightSlider > *,  .lSSlideOuter.lSrtl .lSGallery li {
+    float: right !important;
+}
+/* Rtl */
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: poppins;
+    background-color: #ffffff;
+    position: relative;
+    
+}
+*{
+    box-sizing: border-box;
+    
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.full-slider-box,
+.banner
+{
+    width:100%;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.f-slide-1{
+    background-image: url(../../images/Slider_01.jpg);
+}
+.f-slide-2{
+    background-image: url(../../images/Slider_02.jpg);
+}
+.f-slide-3{
+    background-image: url(../../images/Slider_03.jpg);
+}
+.f-slider-text-container,
+.banner-text-container{
+    width:80%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+.f-slider-text,
+.banner-text{
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+}
+.f-slider-text span,
+.banner-text span{
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 500;
+    color: #666666;
+    font-size: 1.2rem;
+}
+.f-slider-text strong,
+.banner-text strong{
+    color: #333333;
+    font-size: 3rem;
+    line-height: 55px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+.f-slider-text strong font,
+.banner-text strong font{
+    color: #0b9d8a;
+}
+.f-slider-btn,
+.banner-btn{
+    width:170px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #0b9d8a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+#autoWidth{
+    display: flex;
+    justify-content: center !important;
+    margin:10px auto 40px auto;
+
+}
+.feature-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.feature-heading h2,
+.arrival-heading strong,
+.feature-heading strong{
+    font-size: 1.5rem;
+    color: #1b1919;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 40px;
+    padding: 5px 30px;
+   border: 1px solid #e0e0e0;
+}
+.item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.feature-box{
+    width:155px;
+    height: 160px;
+    margin: 0px 20px;
+    border-radius: 10px;
+    overflow:hidden;
+}
+.feature-box a img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media(max-width:1010px){
+
+	.full-slider-box{
+        height: 45vh;
+    }
+    .f-slider-text span,
+    .banner-text span{
+        font-size: 0.9rem;
+    }
+    .f-slider-text strong,
+    .banner-text strong{
+        font-size: 2rem;
+        line-height: 40px;
+    }
+    .search-input{
+        height: 60px;
+    }
+    .search-input input,
+    .search-cancel{
+        font-size: 1.4rem;
+    }
+    .sale-box{
+        height: 200px;
+    }
+    
+}
+@media(max-width:600px){
+    .navigation{
+        padding: 10px 10px;
+    }
+    .f-slider-text strong,
+    .banner-text strong{
+        font-size: 1.2rem;
+        line-height: 25px;
+    }
+    .full-slider-box,
+    .banner{
+        height: 30vh;
+    
+    }
+    .f-slider-text span,
+    .banner-text span{
+        font-size: 0.8rem;
+    }
+    .f-slider-btn,
+    .banner-btn{
+        width:120px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+    .feature-heading h2{
+        font-size: 1.2rem;
+    }
+    .feature-box{
+        width:120px;
+        height: 120px;
+    }
+  
+}
+
+
